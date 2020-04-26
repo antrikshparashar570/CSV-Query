@@ -9,10 +9,6 @@ api = Api(app)
 def hello():
     return render_template('frontend.html')
 
-#@app.route("/data")
-#def hello():
-#    return render_template('result.html')
-
 api.add_resource(data,'/data')
 
 if __name__ == '__main__':
