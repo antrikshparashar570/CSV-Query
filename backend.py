@@ -1,8 +1,10 @@
 from flask import Flask, render_template, make_response
 from flask_restful import Resource, Api
 from flask import jsonify, request
+import mysql.connector
 import csv
 import pdf_to_csv
+import db
 
 class data(Resource):
 
@@ -12,6 +14,10 @@ class data(Resource):
 		csv_file_name = request.form["file_name"]
 		headers = {'Content-Type': 'text/html'}
 		result = self.query(Query_variable, Query_year, csv_file_name)
+		
+		db_obj = db.Database()
+		db_obj.insertData(Query_variable, Query_year, result)
+
 		return make_response(render_template('result.html', result = result, file_name = csv_file_name), 200, headers)
 
 	def query(self, Query_variable, Query_year, csv_file_name):
