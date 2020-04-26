@@ -1,0 +1,58 @@
+<style>
+
+{
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: center;
+  width: 50%;
+  background: #f1f1f1;
+}
+
+/*Style the submit button */
+form.example button {
+  float: center;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+p {
+  text-indent: 50px;
+  text-align: justify;
+  letter-spacing: 3px;
+  text-decoration: none;
+  color: #008CBA;
+}
+
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<form class="example" action="/data" method = "POST" style="margin-left:500; margin-top:300;max-width:800px">
+  <p>Query variable: <input type="text" placeholder="Query variable" name="Query_variable"></p>
+  <p>Query year: <input type="text" placeholder="Query year" name="Query_year"></p>
+  <p>Upload file: <input type="file" placeholder="Please upload balance sheet" name="file_name"></p>
+  <p>Submit:     <button type="submit" ><i class="fa fa-search"></i></button></p>
+</form>
